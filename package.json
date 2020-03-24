@@ -14,7 +14,7 @@
         "serve": "serve out",
         "start": "npm-run-all build serve",
         "predeploy": "npm-run-all build",
-        "deploy": "now --prod --build-env FONTAWESOME_TOKEN=fortawesome-token",
+        "deploy": "now --prod --build-env FONTAWESOME_TOKEN=fontawesome-token",
         "analyze": "cross-env ANALYZE=true next build",
         "eslint": "eslint",
         "lint": "npm-run-all 'eslint {@} --ignore-path .gitignore .' --",
