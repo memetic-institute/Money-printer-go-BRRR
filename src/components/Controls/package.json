@@ -1,0 +1,6 @@
+{
+    "name": "Controls",
+    "main": "./Controls.js",
+    "version": "0.0.0",
+    "private": true
+}

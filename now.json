@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "scope": "npc64927130",
+    "alias": ["brrr.money", "www.brrr.money", "brr.money", "www.brr.money"],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "public": false,
+    "build": {
+        "env": { "FONTAWESOME_TOKEN": "@fontawesome-token" }
+    }
+}

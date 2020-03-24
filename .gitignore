@@ -1,0 +1,22 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+/node_modules
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# ZEIT Now
+.now
+
+# Misc
+.DS_Store
+.env*
+
+# Debug
+*.log
+*.log*
