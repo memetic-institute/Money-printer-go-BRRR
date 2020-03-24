@@ -4,15 +4,21 @@
 
 <p align="center">
     By the <a href="https://memetic.institute" target="_blank">Institute for Memetic Research & Development</a>
+    <br />
+    <img src="/public/print.gif" alt="REEEEEEEEEEEEE" />
 </p>
-
-![REEEEEEEEEEEEE](/public/print.gif)
 
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+
+### Prerequisite
+
+`FONTAWESOME_TOKEN` must be set as an environment variable or replaced in [.npmrc](.npmrc) to a valid [Font Awesome 5 Pro](https://fontawesome.com/pro) npm token.
+
+---
 
 First, run the development server:
 
