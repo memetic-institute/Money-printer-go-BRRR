@@ -5,6 +5,7 @@
     "repository": "github:memetic-institute/money-printer-go-brrr.git",
     "author": "IMRD <hi@memetic.institute> (https://memetic.institute)",
     "version": "1.2.1",
+    "license": "MIT",
     "private": true,
     "scripts": {
         "dev": "next dev",
