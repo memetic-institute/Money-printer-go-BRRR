@@ -5,7 +5,7 @@
 <p align="center">
     By the <a href="https://memetic.institute" target="_blank">Institute for Memetic Research & Development</a>
     <br />
-    <img src="/public/print.gif" alt="REEEEEEEEEEEEE" />
+    <img height="500" src="/public/print.gif" alt="REEEEEEEEEEEEE" />
 </p>
 
 ---
@@ -14,9 +14,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-### Prerequisite
+### ⚠️ Prerequisite
 
-`FONTAWESOME_TOKEN` must be set as an environment variable or replaced in [.npmrc](.npmrc) to a valid [Font Awesome 5 Pro](https://fontawesome.com/pro) npm token.
+`FONTAWESOME_TOKEN` must be set as an environment variable or replaced in [.npmrc](.npmrc) to a valid [Font Awesome 5 Pro](https://fontawesome.com/pro) npm token. If you don't have or wish to pay for a Font Awesome license, you can substitute Pro icons such as `faMusicSlash` with free counterparts and replace the `@fortawesome/pro-solid-svg-icons` dependency with `@fortawesome/free-solid-svg-icons`.
 
 ---
 
