@@ -278,7 +278,7 @@ const items = [
         },
         {
             title: 'GitHub',
-            href: 'https://github.com/memetic-institute',
+            href: 'https://github.com/memetic-institute/Money-printer-go-BRRR',
             icon: faGithub,
             color: black
         }
