@@ -4,7 +4,7 @@
     "homepage": "https://brrr.money",
     "repository": "github:memetic-institute/money-printer-go-brrr.git",
     "author": "IMRD <hi@memetic.institute> (https://memetic.institute)",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "license": "MIT",
     "private": true,
     "scripts": {
@@ -183,6 +183,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-pro": "^5.12.1",
         "@fortawesome/fontawesome-svg-core": "^1.2.27",
+        "@fortawesome/free-brands-svg-icons": "^5.13.0",
         "@fortawesome/pro-solid-svg-icons": "^5.12.1",
         "@fortawesome/react-fontawesome": "^0.1.9",
         "@zeit/next-css": "^1.0.1",
