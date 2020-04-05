@@ -22,16 +22,6 @@ const Container = styled.div`
     }
 `;
 
-const Block = styled.div`
-    background: #FFF;
-    position: absolute;
-    width: 29%;
-    height: 34%;
-    top: 5%;
-    left: 25%;
-    z-index: 5;
-`;
-
 const PrinterPlayer = styled(Player)`
     position: absolute;
     top: 0;
@@ -61,7 +51,6 @@ const Printer = ({
 
     return (
         <Container ready={ready} {...props}>
-            <Block />
             <PrinterPlayer
                 url="print.mp4"
                 player={FilePlayer}
