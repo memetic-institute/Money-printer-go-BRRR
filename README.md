@@ -5,7 +5,7 @@
 <p align="center">
     By the <a href="https://memetic.institute" target="_blank">Institute for Memetic Research & Development</a>
     <br />
-    <img height="500" src="/public/print.gif" alt="REEEEEEEEEEEEE" />
+    <img height="500" src="/public/print-graph.gif" alt="REEEEEEEEEEEEE" />
 </p>
 
 ---

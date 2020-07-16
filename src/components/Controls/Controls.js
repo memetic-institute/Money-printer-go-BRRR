@@ -60,13 +60,12 @@ const flashingBrrr = css`
     -webkit-background-clip: text;
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
-    animation-play-state: running;
+    animation: ${flash} 0.2s linear infinite running;
     text-shadow: 0 0 10px #94F05E;
 `;
 
 const Brrr = styled.span`
     color: #000;
-    animation: ${flash} 0.2s linear infinite paused;
     ${({ playbackRate }) => playbackRate >= 90 && flashingBrrr}
 `;
 
