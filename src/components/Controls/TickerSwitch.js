@@ -1,7 +1,7 @@
 import { string, func } from 'prop-types';
 import styled from 'styled-components';
 
-export const tickers = ['DJI', 'SPY', 'BTCUSD'];
+export const tickers = ['DJI', 'SPY', 'BTCUSD', 'GME', 'AMC', 'NOK', 'BB'];
 
 const Switch = styled.div`
     margin: 0 0.5em;
