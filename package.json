@@ -1,228 +1,107 @@
 {
-    "name": "money-printer-go-brrr",
-    "description": "Print it, baby!",
-    "homepage": "https://brrr.money",
-    "repository": "github:memetic-institute/money-printer-go-brrr.git",
-    "author": "IMRD <hi@memetic.institute> (https://memetic.institute)",
-    "version": "1.2.3",
-    "license": "MIT",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "compile": "next build",
-        "export": "next export",
-        "build": "npm-run-all compile export",
-        "serve": "serve out",
-        "start": "npm-run-all build serve",
-        "predeploy": "npm-run-all build",
-        "deploy": "now --prod",
-        "analyze": "cross-env ANALYZE=true next build",
-        "eslint": "eslint",
-        "lint": "npm-run-all 'eslint {@} --ignore-path .gitignore .' --",
-        "lint:fix": "npm-run-all 'lint --fix {@}' --",
-        "lint:report": "npm-run-all 'lint --format html --output-file eslint-report.html {@}' --"
-    },
-    "engines": {
-        "node": ">=8"
-    },
-    "babel": {
-        "presets": [
-            "next/babel"
-        ],
-        "plugins": [
-            [
-                "styled-components",
-                {
-                    "ssr": true,
-                    "displayName": true,
-                    "preprocess": false
-                }
-            ]
-        ]
-    },
-    "eslintConfig": {
-        "parser": "babel-eslint",
-        "plugins": [
-            "prettier",
-            "react"
-        ],
-        "extends": [
-            "eslint:recommended",
-            "plugin:react/recommended",
-            "airbnb",
-            "prettier",
-            "prettier/babel",
-            "prettier/react"
-        ],
-        "env": {
-            "browser": true,
-            "node": true,
-            "es6": true,
-            "commonjs": true
-        },
-        "parserOptions": {
-            "ecmaVersion": 2020,
-            "sourceType": "module",
-            "allowImportExportEverywhere": false,
-            "codeFrame": false
-        },
-        "globals": {
-            "it": true,
-            "expect": true,
-            "describe": true,
-            "jest": true,
-            "document": true,
-            "test": true,
-            "window": true,
-            "getComputedStyle": true,
-            "fetch": true,
-            "WebSocket": true,
-            "alert": true,
-            "URLSearchParams": true,
-            "React": true
-        },
-        "rules": {
-            "function-paren-newline": [
-                "error",
-                "consistent"
-            ],
-            "import/prefer-default-export": 0,
-            "jsx-a11y/anchor-is-valid": 0,
-            "no-console": [
-                "error",
-                {
-                    "allow": [
-                        "warn",
-                        "error",
-                        "info"
-                    ]
-                }
-            ],
-            "no-multiple-empty-lines": [
-                "error",
-                {
-                    "max": 2,
-                    "maxEOF": 1
-                }
-            ],
-            "prefer-destructuring": [
-                "error",
-                {
-                    "VariableDeclarator": {
-                        "array": false,
-                        "object": true
-                    },
-                    "AssignmentExpression": {
-                        "array": false,
-                        "object": false
-                    }
-                },
-                {
-                    "enforceForRenamedProperties": false
-                }
-            ],
-            "prettier/prettier": "warn",
-            "quote-props": [
-                "error",
-                "consistent"
-            ],
-            "react/destructuring-assignment": 0,
-            "react/jsx-filename-extension": 0,
-            "react/jsx-first-prop-new-line": [
-                1,
-                "multiline"
-            ],
-            "react/jsx-max-props-per-line": [
-                1,
-                {
-                    "when": "multiline"
-                }
-            ],
-            "react/jsx-props-no-spreading": 0,
-            "react/no-find-dom-node": 0,
-            "react/react-in-jsx-scope": 0,
-            "react/sort-comp": 0,
-            "react/no-array-index-key": 0,
-            "import/no-extraneous-dependencies": [
-                "error",
-                {
-                    "packageDir": "."
-                }
-            ]
-        },
-        "settings": {
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
+  "name": "money-printer-go-brrr",
+  "description": "Print it, baby!",
+  "homepage": "https://brrr.money",
+  "repository": "github:memetic-institute/money-printer-go-brrr.git",
+  "author": "IMRD <hi@memetic.institute> (https://memetic.institute)",
+  "version": "2.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "deploy": "vercel --prod",
+    "analyze": "cross-env ANALYZE=true next build",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
+  },
+  "engines": {
+    "node": ">=12.22.0"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true
         }
-    },
-    "prettier": {
-        "printWidth": 80,
-        "tabWidth": 4,
-        "singleQuote": true
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "echo lint-staged"
-        }
-    },
-    "lint-staged": {
-        "!(.next|out|coverage|node_modules)/**/!(*test).js": [
-            "prettier --write",
-            "eslint --fix"
-        ],
-        "*.{json,md}": [
-            "prettier --write"
-        ]
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-pro": "^5.12.1",
-        "@fortawesome/fontawesome-svg-core": "^1.2.27",
-        "@fortawesome/free-brands-svg-icons": "^5.13.0",
-        "@fortawesome/pro-solid-svg-icons": "^5.12.1",
-        "@fortawesome/react-fontawesome": "^0.1.9",
-        "@zeit/next-css": "^1.0.1",
-        "csshake": "https://github.com/elrumordelaluz/csshake.git",
-        "focus-visible": "^5.0.2",
-        "imagemin-mozjpeg": "^8.0.0",
-        "imagemin-optipng": "^7.1.0",
-        "imagemin-svgo": "^7.1.0",
-        "next": "9.3.2",
-        "next-compose-plugins": "^2.2.0",
-        "next-fonts": "^1.0.3",
-        "next-optimized-images": "^2.5.5",
-        "react": "16.13.0",
-        "react-dom": "16.13.0",
-        "react-player": "^1.15.2",
-        "react-slider": "^1.0.3",
-        "responsive-loader": "^1.2.0",
-        "sass": "^1.26.3",
-        "sharp": "^0.25.1",
-        "styled-components": "^5.0.1"
-    },
-    "devDependencies": {
-        "@next/bundle-analyzer": "^9.3.1",
-        "babel-eslint": "^10.1.0",
-        "babel-plugin-styled-components": "^1.10.7",
-        "cross-env": "^7.0.2",
-        "eslint": "^6.8.0",
-        "eslint-config-airbnb": "^18.1.0",
-        "eslint-config-prettier": "^6.10.0",
-        "eslint-plugin-import": "^2.20.1",
-        "eslint-plugin-jsx-a11y": "^6.2.3",
-        "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.19.0",
-        "husky": "^4.2.3",
-        "lint-staged": "^10.0.8",
-        "npm-run-all": "^4.1.5",
-        "prettier": "^1.19.1",
-        "prop-types": "^15.7.2",
-        "serve": "^11.3.0",
-        "webpack-bundle-analyzer": "^3.6.1"
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "next/core-web-vitals",
+      "prettier"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo lint-staged"
     }
+  },
+  "lint-staged": {
+    "!(.next|.vercel|out|coverage|node_modules)/**/!(*test).(js|ts|tsx)": [
+      "prettier --write",
+      "next lint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^6.0.0-beta3",
+    "@fortawesome/fontawesome-svg-core": "^1.3.0-beta3",
+    "@fortawesome/free-brands-svg-icons": "^6.0.0-beta3",
+    "@fortawesome/pro-solid-svg-icons": "^6.0.0-beta3",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "csshake": "https://github.com/elrumordelaluz/csshake.git",
+    "focus-visible": "^5.2.0",
+    "next": "12.0.8",
+    "next-compose-plugins": "^2.2.1",
+    "next-fonts": "^1.5.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "^17.0.2",
+    "react-player": "^2.9.0",
+    "react-slider": "^1.3.1",
+    "react-ts-tradingview-widgets": "^1.0.8",
+    "responsive-loader": "^2.3.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^12.0.8",
+    "@types/node": "^17.0.8",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-slider": "^1.3.1",
+    "@types/styled-components": "^5.1.20",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^2.0.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.7.0",
+    "eslint-config-next": "^12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4",
+    "webpack-bundle-analyzer": "^4.5.0"
+  }
 }
