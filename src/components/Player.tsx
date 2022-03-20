@@ -1,16 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import ReactPlayer, { ReactPlayerProps } from 'react-player';
+import ReactPlayer, { ReactPlayerProps, Config } from 'react-player';
+import { YouTubeConfig } from 'react-player/youtube';
 
 const play = (player?: ReactPlayer | null) => {
-  const internalPlayer = player?.getInternalPlayer();
-  if (!internalPlayer) {
-    return;
-  }
-  player!.seekTo(0);
-  if (internalPlayer.playVideo) {
-    internalPlayer.playVideo();
-  } else {
-    internalPlayer.play?.();
+  try {
+    const internalPlayer = player?.getInternalPlayer();
+    if (!internalPlayer) {
+      return;
+    }
+    player!.seekTo(0);
+    if (internalPlayer.playVideo) {
+      internalPlayer.playVideo();
+    } else {
+      internalPlayer.play?.();
+    }
+  } catch (error) {
+    console.error('Failed to play video', error);
   }
 };
 
@@ -54,7 +59,11 @@ const Player = ({
       playbackRate={playbackRate}
       className={className}
       onReady={handleReady}
-      onUnstarted={handleReady}
+      config={
+        (url.includes('youtube')
+          ? ({ ...props.config, onUnstarted: handleReady } as YouTubeConfig)
+          : props.config) as Config
+      }
       {...props}
     />
   );
