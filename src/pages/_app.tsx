@@ -14,31 +14,29 @@ const url = 'https://brrr.money';
 const brandColor = '#000000';
 
 const GlobalStyle = createGlobalStyle`
-    html,
-    body {
-        padding: 0;
-        margin: 0;
-        font: 16px / 1.5 Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
-            'Helvetica Neue', sans-serif;
-        color: #000;
+  html,
+  body {
+    font: 16px / 1.5 Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    color: #000;
+  }
+
+  * {
+    box-sizing: border-box;
+
+    &:focus:not([data-focus-visible-added]) {
+      outline: none;
     }
+  }
 
-    * {
-        box-sizing: border-box;
+  a {
+    text-decoration: none;
 
-        &:focus:not([data-focus-visible-added]) {
-            outline: none;
-        }
+    &:hover {
+      text-decoration: underline;
     }
-
-    a {
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-    }
+  }
 `;
 
 class App extends NextApp {
