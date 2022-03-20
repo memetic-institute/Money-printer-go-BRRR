@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 // Source: https://git.io/Jv1ZT
 
 export enum BarStyles {
@@ -51,6 +52,19 @@ const cleanWidget = () => {
     scriptElement.innerHTML = '';
   }
 };
+
+const Attribution = styled.div`
+  color: #999;
+  font-size: 12px;
+
+  a {
+    color: #09f;
+
+    &:visited {
+      color: #09f;
+    }
+  }
+`;
 
 type Props = {
   allow_symbol_change?: boolean;
@@ -222,6 +236,7 @@ export const TradingViewWidget = ({
         initWidget();
         return;
       }
+
       const script = document.createElement('script');
       script.id = SCRIPT_ID;
       script.type = 'text/javascript';
@@ -242,9 +257,21 @@ export const TradingViewWidget = ({
   }, [symbol]);
 
   return (
-    <section
-      id={CONTAINER_ID}
-      style={autosize ? { width: '100%', height: '100%' } : {}}
-    />
+    <>
+      <section
+        id={CONTAINER_ID}
+        style={autosize ? { width: '100%', height: '100%' } : {}}
+      />
+      <Attribution>
+        <a
+          href={`https://www.tradingview.com/symbols/${symbol}/`}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span>{symbol} Chart</span>
+        </a>{' '}
+        by TradingView
+      </Attribution>
+    </>
   );
 };
