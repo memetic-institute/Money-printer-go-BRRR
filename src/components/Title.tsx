@@ -6,6 +6,8 @@ const Title = styled.h1`
   font-size: 6rem;
   font-weight: 800;
   text-align: left;
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff;
 
   @media only screen and (max-width: 1200px) and (max-height: 1200px) {
     font-size: 5rem;
