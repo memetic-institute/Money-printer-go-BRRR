@@ -2,10 +2,15 @@
   "name": "money-printer-go-brrr",
   "description": "Print it, baby!",
   "homepage": "https://brrr.money",
-  "repository": "github:memetic-institute/money-printer-go-brrr.git",
+  "repository": "https://github.com/memetic-institute/money-printer-go-brrr",
   "author": "IMRD <hi@memetic.institute> (https://memetic.institute)",
-  "version": "2.1.0",
+  "version": "2.0.0",
   "license": "MIT",
+  "keywords": [
+    "memes",
+    "federal-reserve"
+  ],
+  "funding": "https://memetic.institute/gib",
   "private": true,
   "scripts": {
     "dev": "next",
@@ -16,7 +21,10 @@
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "prepare": "husky install"
+    "prettier": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "semantic-release": "cross-env HUSKY=0 semantic-release"
   },
   "engines": {
     "node": ">=12.22.0"
@@ -36,12 +44,71 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "!(.next|.vercel|out|coverage|node_modules)/**/!(*test).(js|ts|tsx)": [
+    "!(.next|.vercel|out|coverage|node_modules)/**/!(*test).(ts|tsx)": [
+      "tsc --noEmit",
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "!(.next|.vercel|out|coverage|node_modules)/**/!(*test).(js|jsx)": [
       "prettier --write",
       "eslint --fix"
     ],
     "*.{json,md}": [
       "prettier --write"
+    ]
+  },
+  "release": {
+    "branch": [
+      "master",
+      "next"
+    ],
+    "preset": "conventionalcommits",
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          },
+          "writerOpts": {
+            "commitsSort": [
+              "subject",
+              "scope"
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+        }
+      ],
+      [
+        "@semantic-release/github"
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
     ]
   },
   "dependencies": {
@@ -64,7 +131,13 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^16.2.1",
     "@next/bundle-analyzer": "^12.1.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.41",
     "@types/react-dom": "^17.0.14",
