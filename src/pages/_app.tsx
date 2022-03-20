@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'normalize.css';
 import 'focus-visible';
 
 config.autoAddCss = false;
