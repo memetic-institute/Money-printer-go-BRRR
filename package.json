@@ -38,7 +38,7 @@
   "lint-staged": {
     "!(.next|.vercel|out|coverage|node_modules)/**/!(*test).(js|ts|tsx)": [
       "prettier --write",
-      "next lint --fix"
+      "eslint --fix"
     ],
     "*.{json,md}": [
       "prettier --write"
