@@ -12,7 +12,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const white = '#FFF';
 const black = '#000';
-const grey = '#AAA';
+const grey = '#999';
 const brandColor = '#498200';
 const twitterColor = '#1DA1F2';
 
