@@ -16,7 +16,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc",
+    "type-check": "tsc --noEmit --skipLibCheck",
     "deploy": "vercel --prod",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint",
@@ -45,7 +45,7 @@
   },
   "lint-staged": {
     "!(.next|.vercel|out|coverage|node_modules)/**/!(*test).(ts|tsx)": [
-      "tsc --noEmit",
+      "tsc --noEmit --skipLibCheck",
       "prettier --write",
       "eslint --fix"
     ],
