@@ -6,6 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const plugins = [withBundleAnalyzer];
 
 const nextConfig = {
+  swcMinify: true,
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
