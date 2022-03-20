@@ -52,7 +52,10 @@ class App extends NextApp {
           <meta name="description" content={description} />
           <meta name="author" content={author} />
           <link rel="canonical" href={url} />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+          />
           {/* Open Graph */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
@@ -79,6 +82,11 @@ class App extends NextApp {
           })}
           {/* Safari */}
           <meta name="apple-mobile-web-app-title" content={title} />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
           <link
             rel="apple-touch-icon"
             sizes="300x300"
@@ -92,7 +100,7 @@ class App extends NextApp {
           {/* Windows */}
           <meta name="msapplication-config" content="/browserconfig..xml" />
           {/* PWA manifest */}
-          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={brandColor} />
         </Head>
         <GlobalStyle />
